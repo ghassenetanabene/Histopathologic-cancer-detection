@@ -54,6 +54,8 @@ Densenet169v1 | 0.4127 | 0.5124
 Densenet169v2 | 0.4155 | 0.5120
 Densenet169v3 | 0.4145 | 0.5137
 Densenet169v4 | 0.4383 | 0.5078
+Resnet50 | 0.9625 | 0.9609
+Resnet50 ( TTA) | 0.9604 | 0.953
 CBAM_Resnet50 | 0.9711 | 0.9742
 CBAM_Resnet50 (TTA) | 0.9738 | 0.9764
 

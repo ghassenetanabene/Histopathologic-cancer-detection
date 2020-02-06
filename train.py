@@ -34,12 +34,7 @@ def main(args):
     --------
     args: Hyperparamters
     """
-    # Creating the model
-    model_name = args.model_name
-    model = get_model(model_name, pretrained=args.pretrained)
-    print ('='*40)
-    print ('Model Created')
-    print ('='*40)
+    
     # Labels of Training set
     labels = pd.read_csv(os.path.join(args.path,'train_labels.csv'))
     

@@ -5,6 +5,7 @@ import os
 import torch
 import torch.nn as nn
 import torch.nn.init as init
+from torchvision.models import resnet50
 from .cbamresnet import (cbam_resnet18,
                         cbam_resnet34,
                         cbam_resnet50,
@@ -28,16 +29,18 @@ def get_model(model_name, pretrained = True):
     -------
     model : returns the newly created model
     """
-    if '18' in model_name:
+    if 'cbam_resnet18' is model_name:
         model = cbam_resnet18(pretrained = pretrained)
-    elif '34' in model_name:
+    elif 'cbam_resnet34' is model_name:
         model = cbam_resnet34(pretrained = pretrained)
-    elif '50' in model_name:
+    elif 'cbam_resnet50' is model_name:
         model = cbam_resnet50(pretrained = pretrained)
-    elif '101' in model_name:
+    elif 'cbam_resnet101' is model_name:
         model = cbam_resnet101(pretrained = pretrained)
-    else:
+    elif 'cbam_resnet152' is model_name:
         model = cbam_resnet152(pretrained = pretrained)
+    elif 'resnet50' == model_name:
+        model = resnet50(pretrained = pretrained)
     
     # Adds New layers for transfer learning
     model.avg_pool  = nn.AdaptiveAvgPool2d((1, 1))
